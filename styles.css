@@ -1,0 +1,10 @@
+body {
+    display: grid;
+}
+
+div {
+    background-color: blue;
+    height: 30px;
+    width: 30px;
+    border: 3px;
+}
