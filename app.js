@@ -2,11 +2,14 @@ window.addEventListener('DOMContentLoaded', function () {
   let btnDiv = document.createElement('div')
   let button = document.createElement('button');
   let btnText = document.createTextNode('Add Square');
-
+  let container = document.createElement('div');
+  container.className = 'container';
 
   document.body.appendChild(btnDiv);
   btnDiv.appendChild(button);
   button.appendChild(btnText);
+  document.body.appendChild(container);
+
 
   let divID = -1;
 
@@ -21,7 +24,7 @@ window.addEventListener('DOMContentLoaded', function () {
     divTextSpan.className = 'squareText'
     divTextSpan.appendChild(divText);
     squareDiv.appendChild(divTextSpan)
-    document.body.appendChild(squareDiv);
+    container.appendChild(squareDiv);
 
     squareDiv.addEventListener('click', function () {
       let r = Math.floor(Math.random() * 256);          // Random between 0-255
@@ -31,24 +34,22 @@ window.addEventListener('DOMContentLoaded', function () {
       this.style.backgroundColor = rgb
     }),
 
-    console.log('working'),
-
       squareDiv.addEventListener('dblclick',
-      function () {
-        if (this.id % 2 !== 0 & this.previousSibling.id === null) {
-          alert('There is no sqaure before me to delete.')
-        } else if (this.id % 2 !== 0) {
-          this.previousSibling.remove();
-        }
-      },
         function () {
           if (this.id % 2 == 0 & this.nextSibling === null) {
             alert('There is no square after me to delete.')
           } else if (this.id % 2 == 0) {
             this.nextSibling.remove();
           }
-        }
-      )
-      
-})
+        }),
+
+      squareDiv.addEventListener('dblclick',
+        function () {
+          if (this.id % 2 !== 0 & this.previousSibling === null) {
+            alert('There is no sqaure before me to delete.')
+          } else if (this.id % 2 !== 0) {
+            this.previousSibling.remove();
+          }
+        })
+  });
 });
