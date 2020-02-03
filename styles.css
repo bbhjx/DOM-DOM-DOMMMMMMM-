@@ -1,0 +1,16 @@
+.squares {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  margin: 5px;
+  line-height: 100px;
+  text-align: center;
+}
+.squareText {
+  visibility: hidden;
+}
+.squares:hover .squareText {
+  color: white;
+  visibility: visible;
+}
