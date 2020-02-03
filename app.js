@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 window.addEventListener('DOMContentLoaded', function () {
   let btnDiv = document.createElement('div')
   let button = document.createElement('button');
@@ -54,23 +53,3 @@ window.addEventListener('DOMContentLoaded', function () {
         })
   });
 });
-=======
-document.addEventListener('DOMContentLoaded', function() {
-
-    let button = document.createElement('button');
-    let btnText = document.createTextNode('Add Square');
-    button.appendChild(btnText);
-    document.body.appendChild(button);
-
-    button.addEventListener('click', function () {
-        let div = document.createElement('div');
-        document.body.appendChild(div);
-    });
-
-
-
-
-
-
-});
->>>>>>> b05f5d8e110b95d3b266481d119a1f090a91a266
